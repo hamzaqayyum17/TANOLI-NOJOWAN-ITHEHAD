@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Join All Pakistan Nojawan Tanoli Ittehad — membership and volunteer registration.">
+  <title>Join Us — APNTI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">All Pakistan Nojawan Tanoli Ittehad</a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html" class="active btn btn-ghost">Join Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-intro">
+      <h1>Join Us</h1>
+      <p class="lead">Become a member or volunteer. Fill the form below to join our movement and receive updates.</p>
+    </section>
+
+    <section>
+      <form data-ajax>
+        <div class="grid-2">
+          <div>
+            <label for="fname">First Name</label>
+            <input id="fname" name="first_name" type="text" placeholder="Ahmad" required>
+          </div>
+          <div>
+            <label for="lname">Last Name</label>
+            <input id="lname" name="last_name" type="text" placeholder="Khan">
+          </div>
+        </div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required>
+
+        <label for="city">City / District</label>
+        <input id="city" name="city" type="text" placeholder="Abbottabad">
+
+        <label for="interest">I would like to</label>
+        <select id="interest" name="interest">
+          <option>Volunteer</option>
+          <option>Become Member</option>
+          <option>Start Local Chapter</option>
+        </select>
+
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="message" placeholder="Tell us about your interests..."></textarea>
+
+        <div style="margin-top:0.75rem">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>All Pakistan Nojawan Tanoli Ittehad</strong>
+        <p class="muted">Unity • Awareness • Leadership</p>
+      </div>
+    </div>
+    <div class="container copyright">© 2025 All Pakistan Nojawan Tanoli Ittehad</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

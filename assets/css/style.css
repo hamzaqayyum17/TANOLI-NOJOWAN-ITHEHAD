@@ -1,0 +1,340 @@
+/*
+  Shared stylesheet for All Pakistan Nojawan Tanoli Ittehad
+  Colors: Green, White, Light Gray
+  Responsive layout with simple readable fonts
+*/
+
+:root {
+    --green: #0a7a3f;
+    --green-dark: #065c2c;
+    --white: #ffffff;
+    --muted: #6b7280;
+    --bg: #f6f7f8;
+    --card: #ffffff;
+    --max-width: 1100px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    color: #111827;
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem
+}
+
+/* Header */
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid #e6e9ec;
+    position: sticky;
+    top: 0;
+    z-index: 40
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0
+}
+
+.brand {
+    font-weight: 700;
+    color: var(--green);
+    text-decoration: none
+}
+
+.nav {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center
+}
+
+.nav a {
+    color: #0f1724;
+    text-decoration: none;
+    padding: 0.5rem
+}
+
+.nav a.active {
+    color: var(--green-dark)
+}
+
+.nav .btn-ghost {
+    border: 1px solid var(--green);
+    padding: 0.35rem 0.6rem;
+    border-radius: 5px;
+    color: var(--green)
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 1.25rem
+}
+
+/* Hero */
+.hero {
+    padding: 2.5rem 0;
+    background: linear-gradient(180deg, #fff 0%, #fbfdfb 100%)
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 1.5rem;
+    align-items: center
+}
+
+.hero-text h1 {
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    margin: 0 0 0.5rem
+}
+
+.lead {
+    color: var(--muted);
+    margin: 0 0 1rem
+}
+
+.hero-cta {
+    display: flex;
+    gap: 0.75rem
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-weight: 600
+}
+
+.btn-primary {
+    background: var(--green);
+    color: var(--white)
+}
+
+.btn-outline {
+    border: 2px solid var(--green);
+    color: var(--green);
+    background: transparent
+}
+
+.hero-art img {
+    max-width: 100%;
+    height: auto
+}
+
+/* Cards */
+.latest-posts {
+    padding: 2rem 0
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem
+}
+
+.card {
+    background: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    display: flex;
+    flex-direction: column
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover
+}
+
+.card-body {
+    padding: 1rem
+}
+
+.meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 0.25rem 0 0.5rem
+}
+
+.preview-events {
+    padding: 2rem 0
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem
+}
+
+.event-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: var(--card);
+    padding: 0.75rem;
+    border-radius: 8px
+}
+
+.event-date {
+    background: var(--green);
+    color: var(--white);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 700
+}
+
+/* Content layout */
+.page-intro {
+    padding: 1.25rem 0
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    padding-bottom: 2rem
+}
+
+.muted {
+    color: var(--muted)
+}
+
+/* Footer */
+.site-footer {
+    background: var(--white);
+    border-top: 1px solid #e6e9ec;
+    padding: 1.25rem 0;
+    margin-top: 2rem
+}
+
+.footer-grid {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: space-between
+}
+
+.copyright {
+    padding-top: 0.75rem;
+    color: var(--muted);
+    font-size: 0.9rem
+}
+
+/* Forms and pages */
+form {
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04)
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0 0.25rem;
+    font-weight: 600
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #e6e9ec;
+    border-radius: 6px
+}
+
+textarea {
+    min-height: 120px
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px
+}
+
+/* Responsive */
+@media (max-width:900px) {
+    .hero-grid {
+        grid-template-columns: 1fr
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media (max-width:600px) {
+    .nav {
+        display: none
+    }
+
+    .nav-toggle {
+        display: block
+    }
+
+    .cards {
+        grid-template-columns: 1fr
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr
+    }
+}
+
+/* Small helpers */
+.muted {
+    color: var(--muted)
+}
+
+.text-center {
+    text-align: center
+}
