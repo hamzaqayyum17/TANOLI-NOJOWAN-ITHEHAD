@@ -5,8 +5,8 @@
 */
 
 :root {
-    --green: #0a7a3f;
-    --green-dark: #065c2c;
+    --green: #7a0a0a;
+    --green-dark: #5c0606;
     --white: #ffffff;
     --muted: #6b7280;
     --bg: #f6f7f8;
@@ -88,7 +88,9 @@ body {
     border: 0;
     font-size: 1.25rem
 }
-
+.nav-close{
+    display: none;
+}
 /* Hero */
 .hero {
     padding: 2.5rem 0;
@@ -309,12 +311,98 @@ textarea {
 }
 
 @media (max-width:600px) {
+    /* On small screens, transform the nav into an off-canvas sidebar.
+       It remains in the DOM to preserve markup; JS toggles the `open` class. */
     .nav {
-        display: none
+        /* we'll position and hide it off-canvas via transform */
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 280px;
+        background: var(--white);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1.25rem;
+        transform: translateX(-110%);
+        transition: transform 320ms ease;
+        will-change: transform;
+        box-shadow: 6px 0 22px rgba(15, 23, 42, 0.12);
+        z-index: 10000; /* ensure nav sits above overlay and page content */
+        pointer-events: auto;
+        padding-top: 56px; /* space for the close button */
+    }
+
+    .nav.open {
+        transform: translateX(0);
     }
 
     .nav-toggle {
-        display: block
+        display: block;
+    }
+
+    /* Overlay that sits behind the nav when open (created/managed by JS) */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.42);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 200ms ease;
+        z-index: 1; /* ensure overlay sits behind the nav and links */
+    }
+
+    .nav-overlay.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* prevent background scroll when nav is open */
+    body.nav-open {
+        overflow: hidden;
+    }
+
+    .nav a {
+        padding: 0.65rem 0;
+        display: block;
+        border-radius: 6px;
+        position: relative;
+        z-index: 10003; /* ensure links sit above overlay */
+    }
+
+    .nav .btn-ghost {
+        margin-top: 0.5rem;
+        align-self: start;
+    }
+
+    /* internal close button (injected by JS) */
+    .nav-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: none;
+        border: 0;
+        font-size: 1.25rem;
+        cursor: pointer;
+        color: var(--muted);
+        padding: 0.35rem;
+        z-index: 10004; /* ensure close button sits above overlay and nav content */
+    }
+
+    /* Ensure the nav sidebar itself is above the overlay */
+    .nav {
+        z-index: 10002;
+        pointer-events: auto;
+    }
+
+    /* ensure links are clickable and not accidentally covered */
+    .nav a {
+        pointer-events: auto;
+        -webkit-tap-highlight-color: rgba(0,0,0,0.06);
     }
 
     .cards {
@@ -338,3 +426,4 @@ textarea {
 .text-center {
     text-align: center
 }
+
